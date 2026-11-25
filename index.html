@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f1eee5" />
+  <title>Kalinga | A living landscape</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <style>
+    :root { color-scheme: light; }
+    body, .topbar, .hero, .explorer, .stories, .gallery, footer {
+      background-color: #fff0a6 !important;
+    }
+    .intro-strip { background-color: #a52a24 !important; color: #fff0a6 !important; }
+    .intro-strip p, .intro-strip > span, .intro-strip .strip-symbol { color: #fff0a6 !important; }
+    body { color: #4b1714; }
+    h1, h2, h3, .brand, .eyebrow, .section-blurb, .hero-text, .stories-head > p,
+    .story-copy, .model-controls, footer { color: #4b1714; }
+    .button, .top-link, .brand-mark, .stamp, .closing {
+      background-color: #a52a24 !important;
+      color: #fff0a6 !important;
+    }
+    .top-link { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 3px; white-space: nowrap; font-size: 11px; font-weight: 700; }
+    .top-link span { color: #fff0a6 !important; margin: 0; }
+    .top-link:hover { background-color: #84211e !important; color: #fff0a6 !important; }
+    .story-card, .learn-card, .photo-tile, .model-wrap {
+      background-color: #fff7cf !important;
+    }
+    .closing { background-color: #a52a24 !important; }
+    .closing h2, .closing .eyebrow, .closing .sources, .closing .sources a { color: #fff0a6; }
+    .landmark.active { background-color: #a52a24 !important; color: #fff0a6 !important; }
+    a, .card-arrow, .card-num, .story-top, .model-disclaimer { color: #8e211d; }
+    .story-image { display: block; width: 100%; aspect-ratio: 1.7; object-fit: cover; border-radius: 3px; margin: 16px 0; }
+    .story-references { margin-top: 16px; font-size: 10px; line-height: 1.7; }
+    .story-references strong { display: block; font-size: 8px; letter-spacing: .15em; }
+    .story-references a { display: block; }
+    .explorer-grid { align-items: start; }
+    .story-card { max-height: 80vh; overflow-y: auto; }
+    .story-icon, .landmark-nav, .did-you-know { display: none !important; }
+    .story-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 640px) { .story-cards { grid-template-columns: 1fr; } }
+    .brand-mark { width: 40px; height: 40px; padding: 6px; border: 1px solid #a52a24; border-radius: 50%; display: grid; place-items: center; background: #a52a24 !important; color: #fff0a6 !important; }
+    .brand-mark svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .intro-strip { gap: 24px; overflow: hidden; }
+    .strip-label, .strip-symbol { flex: 0 0 auto; }
+    .strip-window { flex: 1 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; }
+    .strip-track { display: flex; flex: 0 0 auto; width: max-content; will-change: transform; animation: strip-loop 20s linear infinite; }
+    .strip-track span { display: block; flex: 0 0 auto; padding-right: 2rem; font: 19px var(--serif); color: #fff0a6; }
+    @keyframes strip-loop { to { transform: translate3d(-12.5%,0,0); } }
+    .strip-symbol { width: 34px; height: 34px; display: grid; place-items: center; }
+    .strip-symbol svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    @media (max-width: 640px) { .intro-strip { gap: 12px; } .strip-track span { font-size: 16px; padding-right: 1rem; } .strip-symbol { width: 28px; height: 28px; } .strip-symbol svg { width: 26px; height: 26px; } }
+    @media (prefers-reduced-motion: reduce) { .strip-track { animation: none; } }
+  </style>
+  <script type="importmap">
+    {"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}
+  </script>
+  <script type="module" src="script.js?v=deploy-ready-2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Kalinga, home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3.5 13.5 11 7l5 4.3L21 6l7.5 7.5"/><path d="M5 17.5c4-2.2 7.4-2.2 11.2 0s7.3 2.2 10.8 0"/><path d="M5 22c4-2.2 7.4-2.2 11.2 0s7.3 2.2 10.8 0"/><path d="M17 11c-1.8 2.8-1.8 5.6 0 8.2s1.8 5.3 0 8"/></svg></span><span>KALINGA <small>LAND &amp; LIVING CULTURE</small></span></a>
+    <nav aria-label="Main navigation"><a href="#diorama">Explore</a><a href="#stories">Learn</a><a href="#gallery">Photo journal</a></nav>
+    <a class="top-link" href="#diorama">Enter the diorama <span aria-hidden="true">↓</span></a>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> NORTHERN LUZON · PHILIPPINES</p>
+        <h1>A landscape<br>made <em>together.</em></h1>
+        <p class="hero-text">Step inside a handmade mountain village. Follow the river, look closely at the homes, and meet the clay figures who bring this Kalinga inspired diorama to life.</p>
+        <a class="button" href="#diorama">Explore the village <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Photograph of the handmade village diorama">
+        <div class="art-frame"><img src="asset/1001793395.jpg" alt="A handmade model village with a thatched house, green terraces, river, and small clay people"/><div class="frame-grain"></div></div>
+        <div class="stamp">FIELD<br>NOTES<br><b>01</b></div>
+      </div>
+    </section>
+
+    <section class="intro-strip"><span class="strip-label">THE CORDILLERA, THROUGH A MAKER’S EYES</span><div class="strip-window" aria-label="Mountains shape the land. Water connects it. People make a home."><div class="strip-track"><span>Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span><span aria-hidden="true">Mountains shape the land. Water connects it. People make a home.</span></div></div><span class="strip-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3.5 13.5 11 7l5 4.3L21 6l7.5 7.5"/><path d="M5 17.5c4-2.2 7.4-2.2 11.2 0s7.3 2.2 10.8 0"/><path d="M5 22c4-2.2 7.4-2.2 11.2 0s7.3 2.2 10.8 0"/><path d="M17 11c-1.8 2.8-1.8 5.6 0 8.2s1.8 5.3 0 8"/></svg></span></section>
+
+    <section class="explorer section-pad" id="diorama">
+      <div class="section-heading"><div><p class="eyebrow"><span></span> INTERACTIVE FIELD GUIDE</p><h2>Take a closer look.</h2></div><p class="section-blurb">Choose a marker on the model to discover a detail. Each one opens a short story about the landscape and the lives it supports.</p></div>
+      <div class="explorer-grid">
+        <div class="model-wrap">
+          <div class="model-stage" id="modelStage" aria-label="Interactive Three.js village diorama. Drag to orbit, scroll or pinch to zoom, and click a feature to learn more.">
+            <canvas id="threeCanvas" aria-label="Three-dimensional Kalinga-inspired village diorama"></canvas>
+            <div class="stage-label"><span class="live-dot"></span> 360° VILLAGE VIEW <span class="stage-sep">/</span> <span id="stageCount">01 OF 04</span></div>
+            <div class="stage-hint">DRAG PEOPLE TO MOVE · SHIFT + DRAG TO LIFT · DRAG EMPTY SPACE TO ORBIT</div>
+            <div class="webgl-error" id="webglError" hidden>Could not load the 3D scene. Check your internet connection and open this page through a local server.</div>
+          </div>
+          <div class="model-controls"><span><i>↗</i> Drag to look all around · scroll to zoom</span><button id="resetView" type="button">Reset view <b>↺</b></button></div>
+          <aside class="preservation-note" style="width:100%;box-sizing:border-box;margin:14px 0 0;padding:24px 28px;background:#a52a24;color:#fff0a6"><h3 style="margin:0 0 10px;color:#fff0a6;font:600 17px var(--sans)">Present-Day Challenges &amp; Cultural Preservation</h3><p style="margin:0;color:#fff0a6;line-height:1.7;font-size:12px">Today, Kalinga communities navigate pressing modern challenges, including youth migration to urban centers, shifting educational and economic priorities that reduce traditional apprenticeships, and environmental threats like deforestation and climate variability impacting mountain watersheds and rice terraces. Despite these pressures, active cultural preservation thrives through community-led initiatives where elders mentor younger generations in batok tattooing, gangsa music, traditional weaving, and Bodong peacekeeping, while local schools and cultural advocates integrate Kalinga history, dialects, and sustainable watershed stewardship into modern education and responsible cultural tourism.</p></aside>
+                    <div class="landmark-nav" aria-label="Explore diorama features">
+            <button class="landmark active" data-stop="home"><span>01</span> House</button><button class="landmark" data-stop="river"><span>02</span> River</button><button class="landmark" data-stop="terraces"><span>03</span> Terraces</button><button class="landmark" data-stop="people"><span>04</span> People</button>
+          </div>
+        </div>
+        <article class="story-card" aria-live="polite">
+          <div class="story-top"><span id="storyType">LAND &amp; HOME</span><span id="storyNum">01 / 04</span></div>
+          <img id="storyImage" class="story-image" src="asset/1001793378.jpg" alt="A Kalinga mambabatok tattooing a seated client" />
+          <div class="story-icon" id="storyIcon">⌂</div>
+          <p class="eyebrow story-kicker" id="storyKicker">A PLACE TO GATHER</p>
+          <h3 id="storyTitle">The house on stilts</h3>
+          <p class="story-copy" id="storyCopy">At the heart of the model, a raised home stands on sturdy posts beneath a thick thatched roof. The open space below lifts the living area off the ground and makes room for air to move.</p>
+          <div class="story-references" id="storyReferences"></div>
+          <div class="did-you-know"><span>FIELD NOTE</span><p id="storyNote">Kalinga communities are diverse. House forms and building materials vary from place to place.</p></div>
+          <div class="story-nav"><button id="prevStop" aria-label="Previous detail">←</button><div class="story-progress"><span id="progressBar"></span></div><button id="nextStop" aria-label="Next detail">→</button></div>
+        </article>
+      </div>
+      <p class="model-disclaimer">The Three.js scene is a simplified 3D interpretation inspired by the supplied craft model. It is not a complete or definitive portrait of Kalinga life.</p>
+    </section>
+
+    <section class="stories section-pad" id="stories"><div class="stories-head"><p class="eyebrow"><span></span> FOUR PEOPLE SETS</p><h2>Four stories,<br>one community.</h2><p>Choose a topic to open its story in the diorama explorer.</p></div>
+      <div class="story-cards">
+        <button class="learn-card" data-jump="home"><span class="card-num">PEOPLE SET 01</span><span class="card-icon">01</span><h3>Mambabatok</h3><p>Indigenous tattooing, batok tools, and knowledge carried through family generations.</p><span class="card-arrow">Open this story -&gt;</span></button>
+        <button class="learn-card" data-jump="river"><span class="card-num">PEOPLE SET 02</span><span class="card-icon">02</span><h3>Bodong peace pacts</h3><p>Customary law, community agreements, and ritual performances that uphold peace.</p><span class="card-arrow">Open this story -&gt;</span></button>
+        <button class="learn-card" data-jump="terraces"><span class="card-num">PEOPLE SET 03</span><span class="card-icon">03</span><h3>Livelihood &amp; technology</h3><p>Rice terraces, water systems, weaving, and crafts shaped by mountain life.</p><span class="card-arrow">Open this story -&gt;</span></button>
+        <button class="learn-card" data-jump="people"><span class="card-num">PEOPLE SET 04</span><span class="card-icon">04</span><h3>Indigenous psychology</h3><p>Kapwa, Bain, Paniyaw, and Ngilin express relationships and shared community values.</p><span class="card-arrow">Open this story -&gt;</span></button>
+      </div>
+    </section>
+
+    <section class="gallery section-pad" id="gallery"><div class="section-heading"><div><p class="eyebrow"><span></span> FROM THE PHOTO JOURNAL</p><h2>Made by hand.</h2></div><p class="section-blurb">Swipe through each selected photograph of the handmade model, one detail at a time.</p></div>
+      <div class="photo-carousel" id="photoCarousel" aria-label="Photo journal carousel">
+        <div class="photo-carousel-track" id="photoTrack" aria-live="polite"></div>
+        <button class="photo-control photo-prev" id="photoPrev" type="button" aria-label="Previous photo">←</button>
+        <button class="photo-control photo-next" id="photoNext" type="button" aria-label="Next photo">→</button>
+        <div class="photo-carousel-meta"><span id="photoCaption"></span><span id="photoCount"></span></div>
+        <div class="photo-carousel-dots" id="photoDots" aria-label="Choose a photo"></div>
+        <p class="photo-swipe-hint">Swipe or use the arrows to browse the photos</p>
+      </div>
+    </section>
+    <section class="closing"><p class="eyebrow">KEEP LOOKING. KEEP LEARNING.</p><h2>Culture lives<br>in the <em>details.</em></h2><a class="button button-light" href="#diorama">Return to the village <span>↑</span></a><p class="sources">Learning notes: <a href="https://ncca.gov.ph/about-culture-and-arts/culture-profile/glimpses-peoples-of-the-philippines/kalinga/" target="_blank" rel="noreferrer">National Commission for Culture and the Arts — Kalinga</a> · <a href="https://www.nationalmuseum.gov.ph/2022/03/23/body-modification-tattooing-in-northern-philippines/" target="_blank" rel="noreferrer">National Museum of the Philippines</a></p></section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3.5 13.5 11 7l5 4.3L21 6l7.5 7.5"/><path d="M5 17.5c4-2.2 7.4-2.2 11.2 0s7.3 2.2 10.8 0"/><path d="M5 22c4-2.2 7.4-2.2 11.2 0s7.3 2.2 10.8 0"/><path d="M17 11c-1.8 2.8-1.8 5.6 0 8.2s1.8 5.3 0 8"/></svg></span><span>KALINGA <small>LAND &amp; LIVING CULTURE</small></span></a><span>A learning experience inspired by a handmade diorama.</span></footer>
+</body>
+</html>

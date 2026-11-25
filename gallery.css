@@ -1,0 +1,16 @@
+/* Swipeable photo journal */
+.photo-carousel{position:relative;overflow:hidden;padding:0 58px 18px;background:transparent}
+.photo-carousel-track{display:flex;gap:14px;transition:transform .55s cubic-bezier(.22,.75,.25,1);touch-action:pan-y;cursor:grab;user-select:none}
+.photo-carousel-track:active{cursor:grabbing}
+.photo-slide{flex:0 0 34%;height:250px;margin:0;overflow:hidden;background:#fff0a6;opacity:.88;transform:scale(.96);transition:opacity .4s,transform .4s}
+.photo-slide.is-active{opacity:1;transform:scale(1)}
+.photo-slide img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.photo-control{position:absolute;z-index:2;top:125px;transform:translateY(-50%);width:38px;height:38px;border:1px solid #a72b20;border-radius:50%;background:#a72b20;color:#fff0a6;font-size:20px;cursor:pointer}
+.photo-prev{left:10px}.photo-next{right:10px}
+.photo-carousel-meta{display:flex;justify-content:space-between;margin-top:16px;color:#8f281e;font-size:9px;letter-spacing:.13em}
+.photo-carousel-dots{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:thin}
+.photo-dot{flex:0 0 7px;width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#d8a84c;cursor:pointer}
+.photo-dot.is-active{background:#ae3928;transform:scale(1.3)}
+.photo-swipe-hint{margin:10px 0 0;color:#8f5140;font-size:9px}
+@media(max-width:640px){.photo-carousel{padding:0 42px 16px}.photo-slide{flex-basis:78%;height:210px}.photo-control{top:105px;width:32px;height:32px;font-size:17px}.photo-prev{left:4px}.photo-next{right:4px}}
+@media(prefers-reduced-motion:reduce){.photo-carousel-track,.photo-slide{transition:none!important}}
